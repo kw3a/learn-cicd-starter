@@ -20,7 +20,7 @@ func TestGetApiKeyInvalid(t *testing.T) {
 	req := httptest.NewRequest("GET", "http://localhost:8000/", nil)
 	req.Header.Set("Authorization", "DiferentKey valid")
 	input := req.Header
-	want := "a"
+	want := ""
 	got, _ := GetAPIKey(input)
 	if want != got {
 		t.Fatalf("expected: %s, got: %s", want, got)
